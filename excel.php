@@ -12,7 +12,7 @@
 		$tmpfname = "test.xlsx";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
-		$worksheet = $excelObj->getSheet(0);
+		$worksheet = $excelObj->getSheet(1);
 		$lastRow = $worksheet->getHighestRow();
 		
 		echo "<table>";
@@ -21,6 +21,8 @@
 			 echo $worksheet->getCell('A'.$row)->getValue();
 			 echo "</td><td>";
 			 echo $worksheet->getCell('B'.$row)->getValue();
+			 echo "</td><td>";
+			 echo $worksheet->getCell('C'.$row)->getValue();
 			 echo "</td><tr>";
 		}
 		echo "</table>";	
